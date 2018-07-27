@@ -1,0 +1,74 @@
+@charset "utf-8";
+/* CSS Document */
+.top{
+	width:1500px;
+	height:80px;
+	margin:0 auto;
+	background-color:#424242;
+}
+	
+.logo{
+	height:80px;
+	float:left;
+	width:200px;
+	background-image:url(000659d8iil59iz58t591u.jpg.jpg);
+	background-position:center;
+}
+.daohang{
+	height:80px;
+	text-align:center;
+	font-size:36px;
+	float:left;
+	width:180px;
+	line-height:70px;
+}
+.daohang a{
+	color:#FFF;
+	text-decoration:none;
+}
+.daohang a:hover{
+	background-color:#bfb697;
+	color:#FFF;
+	width:180px;
+    height:80px;
+	display: block;
+}
+.login{
+	font-size:24px;
+	height:80px;
+	width:200px;
+	float:left;
+	text-align:center;
+	line-height:70px;
+}
+.login a{
+	color:#FFF;
+	text-decoration:none;
+}
+.mid{
+	width:1500px;
+	margin-left:3px;
+}
+.wenzi{
+	margin-left:150px;
+	font-size:34px;
+	margin-top:20px;
+	margin-bottom:20px;
+	font-weight:bold;
+	color:#001c53;
+}
+.battom{
+	width:1236px;
+	height:260px;
+	margin:auto;
+}
+.battom1{
+	width:170px;
+	height:260px;
+	float:left;
+}
+
+
+
+
+
