@@ -1,0 +1,174 @@
+@charset "utf-8";
+/* CSS Document */
+
+.all{
+	margin:0 auto;
+}
+.top{
+	width:1500px;
+	height:90px;
+	border-bottom: 2px solid #000;
+}
+.logo{
+	width:300px;
+	height:90px;
+	float:left;
+}
+.navigation{
+	width:1200px;
+	height:90px;
+	float:left;
+}
+.navigation ul{
+	width:1050px;
+	height:90px;
+	list-style:none;
+	float:left;
+	margin-top:0px;
+}
+.navigation ul a{
+	color:#000;
+	line-height:none;
+	width:120px;
+	height:90px;
+}
+.navigation ul a:hover{
+	color:#F00;
+	width:120px;
+	height:90px;
+}
+.navigation ul a li{
+	width:120px;
+	height:90px;
+	float:left;
+	font-size:24px;
+	font-weight:bold;
+	line-height:85px;
+	text-align:center;
+}
+.navigation h3{
+	height:90px;
+	width:110px;
+	float:left;
+	margin-top:0px;
+	line-height:85px;
+	text-align:center;
+}
+.navigation h3 a{
+	color:#000;
+	text-decoration:none;
+}
+.navigation h3 a:hover{
+	color:#F00;
+}
+.left{
+	width:400px;
+	height:1080px;
+	float:left;
+	margin-left:50px;
+	margin-top:30px;
+}
+.left h2{
+}
+.left1{
+	width:400px;
+	height:300px;
+}
+.left ul{
+	font-size:20px;
+	list-style:none;
+	height:300px;
+	width:400px;
+	padding-left:0px;
+}
+.left ul a{
+	color:#000;
+	text-decoration:none;
+}
+.left ul a:hover{
+	color:#F00;
+}
+.left ul li{
+	font-size:18px;
+	margin-top:32px;
+	margin-bottom:32px;
+	padding-left:15px;
+	padding-right:15px;
+}
+.left ul li a{
+	color:#000;
+	text-decoration:none;
+}
+.left h3{
+}
+.left h3 a{
+	color:#000;
+	text-decoration:none;
+}
+.left h3 a:hover{
+	color:#F00;
+}
+.right{
+	width:940px;
+	height:1100px;
+	float:left;
+	margin-left:50px;
+	margin-right:50px;
+	margin-top:30px;
+}
+.right0{
+	text-align:center;
+	font-size:36px;
+	padding-left:120px;
+	padding-right:120px;
+}
+.right0 a{
+	color:#000;
+	text-decoration:none;
+}
+.right0 a:hover{
+	color:#F00;
+}
+.right1{
+	width:950px;
+	height:600px;
+	padding-left:25px;
+	margin-top:30px;
+}
+.right h2{
+	padding-left:70px;
+	padding-right:70px;
+}
+.right2{
+	width:950px;
+	height:290px;
+	margin-top:40px;
+	position:relative;
+}
+.right21{
+	width:360px;
+	height:260px;
+	float:left;
+}
+.right22{
+	font-size:28px;
+	position:absolute;
+	top:10px;
+	left:400px;
+	font-size:30px;
+}
+.right22 a{
+	color:#000;
+	text-decoration:none;
+}
+.right22 a:hover{
+	color:#F00;
+}
+.right23{
+	font-size:24px;
+	padding-left:300px;
+	position:absolute;
+	top:220px;
+	left:340px;
+	font-size:24px;
+}
