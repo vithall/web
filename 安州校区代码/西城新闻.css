@@ -1,0 +1,158 @@
+@charset "utf-8";
+/* CSS Document */
+.all{
+	margin:0 auto;
+}
+.top{
+	width:1500px;
+	height:100px;
+	position:relative;
+	background-color:#717774;
+}
+.title{
+	color:#FFF;
+	font-size:30px;
+	position:absolute;
+	font-family:Tahoma, Geneva, sans-serif;
+	top:33px;
+	left:600px;
+	text-align:center;
+	width:400px;
+	height:60px;
+	letter-spacing:3px;
+	font-weight:bold;
+}
+.navigation{
+	height:50px;
+	width:1500px;
+	background-color:#fdcd01;
+	margin-top:-16px;
+}
+.navigation ul{
+	list-style:none;
+	width:1500px;
+}
+.navigation ul li{
+	font-size:24px;
+	font-weight:bold;
+	float:left;
+	text-align:center;
+	width:160px;
+	color:#FFF;
+	line-height:50px;
+}
+.navigation ul li a{
+	text-decoration:none;
+	color:#FFF;
+}
+.navigation ul li:hover{
+	color:#FFF;
+	width:160px;
+	height:50px;
+	background-color:#717774;
+}
+.mid{
+	width:1500px;
+	height:1040px;
+}
+.midleft{
+	width:500px;
+	height:1040px;
+	float:left;
+}
+.midleft1{
+	height:320px;
+	width:500px;
+	margin-top:20px;
+	margin-bottom:20px;
+}
+.midright{
+	 border:2px solid #666;
+	 width:950px;
+	 height:1000px;
+	 float:left;
+	 margin:20px 20px 20px 26px;
+}
+.midright1{
+	background-color:#d6dfe0;
+	height:50px;
+	width:950;
+	border-bottom:2px solid #666;
+	font-size:24px;
+	line-height:45px;
+	text-decoration:underline;
+}
+.midright1 a{
+	color:#333;
+}
+.midright2{
+	width:950px;
+	height:320px;
+}
+.midright21{
+	width:400;
+	height:220px;
+	float:left;
+	padding-top:45px;
+	padding-bottom:45px;
+	padding-left:50px;
+	padding-right:50px;
+}
+.midright22{
+	float:left;
+	width:550px;
+	height:310px;
+}
+.midright221{
+	margin-top:80px;
+	margin-bottom:25px;
+}
+.midright222{
+	margin-left:40px;
+	margin-right:40px;
+}
+.floor{
+	width:1500px;
+	height:120px;
+	background-color:#717774;
+}
+.floor1{
+	width:150px;
+	height:120px;
+	float:left;
+	text-align:center;
+	padding-top:9px;
+}
+.floor2{
+	width:450px;
+	height:120px;
+	float:left;
+}
+.floor2 div{
+	color:#FFF;
+	font-size:13px;
+	line-height:60px;
+	text-align:center;
+}
+.floor3{
+	width:350px;
+	height:120px;
+	float:left;
+}
+.floor3 div{
+	color:#FFF;
+	font-size:13px;
+	line-height:60px;
+	text-align:center;
+}
+.floor4{
+	width:550px;
+	height:120px;
+	float:left;
+}
+.floor4 div{
+	color:#FFF;
+	font-size:13px;
+	line-height:60px;
+	text-align:center;
+}

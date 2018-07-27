@@ -1,0 +1,211 @@
+@charset "utf-8";
+/* CSS Document */
+
+.all{
+	margin:0 auto;
+}
+.top{
+	width:1500px;
+	height:100px;
+	position:relative;
+	background-color:#717774;
+}
+.text{
+	width:150px;
+	height:100%;
+	float:left;
+}
+.title{
+	color:#FFF;
+	font-size:30px;
+	position:absolute;
+	font-family:Tahoma, Geneva, sans-serif;
+	top:33px;
+	left:600px;
+	text-align:center;
+	width:400px;
+	height:60px;
+	letter-spacing:3px;
+	font-weight:bold;
+}
+.box{
+	border:solid 1px #717775;
+	height:30px;
+	width:200px;
+	font-size:18px;
+	line-height:28px;
+	position:absolute;
+	top:35px;
+	left:1200px;
+}
+input{
+	padding:0;
+	margin:0;
+	background:none;
+}
+.submit{
+	width:46px;
+	height:100%;
+	background-color:#FFF;
+	color:#000;
+}
+.navigation{
+	height:50px;
+	width:1500px;
+	background-color:#fdcd01;
+	margin-top:-16px;
+}
+.navigation ul{
+	list-style:none;
+	width:1500px;
+	height:50px;
+}
+.navigation ul li{
+	font-size:24px;
+	font-weight:bold;
+	float:left;
+	text-align:center;
+	width:177px;
+	height:50px;
+	line-height:50px;
+	color:#FFF;
+}
+.navigation ul li a{
+	text-decoration:none;
+}
+.navigation ul li:hover{
+	background-color:#717774;
+	width:177px;
+	height:50px;
+}
+.mid{
+	width:1500px;
+	height:1000px;
+}
+.midleft{
+	width:200px;
+	height:1000px;
+	float:left;
+}
+.midleft h2{
+	text-align:center;
+	margin-top:20px;
+}
+.midleft h2 a{
+	text-decoration:none;
+	color:#000;
+}
+.midleft h2 a:hover{
+	color:#039;
+}
+.midmid{
+	width:300px;
+	height:1000px;
+	float:left;
+}
+.midmid ul h3{
+	font-weight:bold;
+	color:#000;
+	margin-top:25px;
+	margin-bottom:25px;
+}
+.midmid ul h3 a{
+	text-decoration:none;
+	color:#000;
+}
+.midmid ul h3 a:hover{
+	color:#039;
+}
+.midmid ul li{
+	list-style:none;
+	width:300px;
+	height:40px;
+	font-weight:bold;
+	padding-left:40px;
+}
+.midmid ul li a{
+	text-decoration:none;
+}
+.midright{
+	width:1000px;
+	height:1000px;
+	float:left;
+}
+.jp-booksList{
+	background:#fff;
+}
+.jp-booksList tr th{
+	border:solid #eee;
+	border-width:0px 0px 1px 1px;
+}
+.jp-booksList tr th:first-child, .jp-booksList tr td:first-child{
+	border-left:none;
+	word-break:break-all;
+	word-wrap:break-word;
+}
+.jp-booksList tr th{
+	background:#f5f5f5;
+	line-height:32px;
+	height:32px;
+	text-align:center;
+}
+.jp-booksList tr td{
+	line-height:28px;
+	height:28px;
+	padding:0 6px;
+	border:solid #eee;
+	border-width:0px 0px 1px 1px;
+}
+.jp-booksList tr td a{
+	color:#C33;
+}
+.jp-booksList tr:hover > td{
+	background:#fff8e2;
+}
+.floor{
+	width:1500px;
+	height:120px;
+	background-color:#717774;
+}
+.floor1{
+	width:150px;
+	height:120px;
+	float:left;
+	text-align:center;
+	padding-top:9px;
+}
+.floor2{
+	width:450px;
+	height:120px;
+	float:left;
+}
+.floor2 div{
+	color:#FFF;
+	font-size:13px;
+	line-height:60px;
+	text-align:center;
+}
+.floor3{
+	width:350px;
+	height:120px;
+	float:left;
+}
+.floor3 div{
+	color:#FFF;
+	font-size:13px;
+	line-height:60px;
+	text-align:center;
+}
+.floor4{
+	width:550px;
+	height:120px;
+	float:left;
+}
+.floor4 div{
+	color:#FFF;
+	font-size:13px;
+	line-height:60px;
+	text-align:center;
+}
+
+
