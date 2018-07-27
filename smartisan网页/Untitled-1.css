@@ -1,0 +1,101 @@
+@charset "utf-8";
+/* CSS Document */
+
+<style>
+.all{
+	margin:auto;
+}
+.top{
+	background-color:#000;
+	width:1024px;
+	height:80px;
+	margin:0 auto;
+}
+.logo{
+	padding-left:100px;
+	padding-right:50px;
+	height:60px;
+	padding-top:10px;
+	float:left;
+	background-color:#000;
+}
+.topnavi{
+	background-color:#000;
+	float:left;
+	color:#FFF;
+	width:98px;
+	height:45px;
+	padding-top:25px;
+}
+
+.middle{
+	height:60px;
+	width:820px;
+	margin-left:102px;
+	margin:0 auto;
+}
+.jingxuan{
+	width:60px;
+	height:40px;
+	float:left;
+	list-style:none;
+	font-weight:bold;
+	font-size:14px;
+	padding-top:15px;
+	text-align:center;
+}	
+.navigation{
+	width:70px;
+	height:35px;
+	float:left;
+	list-style:none;
+	font-weight:bold;
+	font-size:14px;
+	padding-top:15px;
+	text-align:center;
+}
+
+.gouwuche{
+	width:110px;
+	height:40px;
+	float:left;
+	list-style:none;
+	font-weight:bold;
+	font-size:14px;
+	margin-left:100px;
+	padding-top:5px;
+}
+.datu{
+	width:820px;
+	margin-left:102px;
+	margin:0 auto;
+}
+.batton{
+	width:820px;
+	margin-left:102px;
+	margin:0 auto;
+	margin-top:30px;
+	height:130px;
+}
+.batton1{
+	width:204px;
+	float:left;
+}
+.batton2{
+	width:204px;
+	height:35px;
+	text-align:center;
+}
+.batton3{
+	width:204px;
+	height:50px;
+}
+.copyright{
+	text-align:center;
+	font-size:10px;
+	height:40px;
+	margin-top:20px;
+	clear:left;
+}
+	
+</style>
