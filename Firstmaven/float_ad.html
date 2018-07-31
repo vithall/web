@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浮动广告条</title>
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="100%" height="80px" border="0" cellpadding="0" cellspacing="0" bgcolor="black">
+<tr>
+    <td width="25%"><font color="#FFFFFF" size="7">电子商务</font></td>
+    <td width="50%">
+        <img WIDTH="770" height="70px" src="images/banner_ad/1.gif" name="adbanner" >
+        <script language="JavaScript">
+        var nowimg=1;
+        function chgbanner(){
+            nowimg=(nowimg>=3)?1:(nowimg+1);
+            //注意这个表达式的写法,这相当于一个选择语句
+            // if (nowimg>=3){nowimg=1;}else{nowimg=nowimg+1;}
+
+            document.images["adbanner"].src="images/banner_ad\\"+nowimg+".gif";
+            //请注意数据类型的强制转换规则:字符串加数字自动转换为字符串
+        }
+        window.setInterval(chgbanner,5000);
+        //每隔5秒钟执行chgbanner函数
+        </script>
+    </td>
+    <td width="25%">
+        <div align="center">
+        <script>
+            img = new Array()
+            for(var i=0; i <= 14; i++) {
+                img[i] = new Image()
+            }
+            img[1].src = "images/time/dg0.gif";
+            img[2].src = "images/time/dg1.gif";
+            img[3].src = "images/time/dg2.gif";
+            img[4].src = "images/time/dg3.gif";
+            img[5].src = "images/time/dg4.gif";
+            img[6].src = "images/time/dg5.gif";
+            img[7].src = "images/time/dg6.gif";
+            img[8].src = "images/time/dg7.gif";
+            img[9].src = "images/time/dg8.gif";
+            img[10].src = "images/time/dg9.gif";
+            img[11].src = "images/time/dgon.gif";
+            img[12].src = "images/time/dgoff.gif";
+            img[13].src = "images/time/dgam.gif";
+            img[14].src = "images/time/dgpm.gif";
+
+            var base = "images/time/dg";
+            var space = "images/time/space.gif";
+            //输出6个空白图片
+            document.write('<div style="padding:5px;width:214px; height:25px;background-color: #000000; layer-background-color: #000000;">');
+            for (var i=1;i<=9;i++){
+                document.write("<img id='pic"+i+"' src='"+space+"' width='23px' height='30'>");
+            }
+            document.write("</div>");
+            //组合图片路径
+            function pic(id){
+                return "images/time/dg"+id+".gif";
+            }
+            //将时间字符串转换为图片显示
+            function showtime(){
+//获取当前时、分、秒
+                var now = new Date();
+                var hh = now.getHours();
+                var mm = now.getMinutes();
+                var ss = now.getSeconds();
+//判断上午还是下午
+                var ampm = (hh < 12) ? "am" : "pm";
+//从24小时制转换为12小时制
+                // hh = (hh>12)?(hh - 12):hh;
+//如果为0点转换为12点
+                // hh = (hh==0)?12:hh;
+//如果时、分、秒小于2位则前面加0补齐2位
+                hh = (hh<10)?("0"+hh):(""+hh);
+                mm = (mm<10)?("0"+mm):(""+mm);
+                ss = (ss<10)?("0"+ss):(""+ss);
+//设置图片
+                pic1.src = (hh.charAt(0)=="0")?space:pic(hh.charAt(0));
+                pic2.src = pic(hh.charAt(1));
+                pic3.src = (ss % 2) ? pic("on") : pic("off");
+                pic4.src = pic(mm.charAt(0));
+                pic5.src = pic(mm.charAt(1));
+                pic6.src = pic("on");
+                pic7.src = pic(ss.charAt(0));
+                pic8.src = pic(ss.charAt(1));
+                pic9.src = pic(ampm);
+                setTimeout("showtime()",1000)
+            }
+            showtime();
+        </script><br>
+        <a href="Login.html" target="_blank">注册</a>
+        </div>
+    </td>
+</tr>
+</table>
+</body>
+</html>

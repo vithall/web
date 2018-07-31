@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Left</title>
+    <script src="Add.js">
+
+    </script>
+
+</head>
+<body>
+<form>
+    输入A商品的销售额：<br>
+    <label for="aNumber"></label>
+    <input type="number" name="number" id="aNumber"><br>
+    输入B商品的销售额：<br>
+    <label for="bNumber"></label>
+    <input type="number" name="number" id="bNumber"><br>
+    输入C商品的销售额：<br>
+    <label for="cNumber"></label>
+    <input type="number" name="number" id="cNumber"><br>
+
+    <input type="submit" onclick="sell()" value="点击计算销售额" ><br>
+</form>
+
+<form>
+    输入个人月收入： <br>
+    <label for="taxNumber"></label>
+    <input type="number" name="number" id="taxNumber"><br>
+    <input type="submit" onclick="CaculateTax()" value="点击计算应缴纳税收">
+</form>
+<form>
+    计算1到n的和，输入n的值： <br>
+    <label for="Add"></label>
+    <input type="number" id="Add"><br>
+    <input type="submit" onclick="Addn()" value="点击计算1到n的和"><br>
+</form>
+<form>
+    计算0到n的偶数的和，输入n的值： <br>
+    <label for="Even"></label>
+    <input type="number" id="Even"><br>
+    <input type="submit" onclick="AddEven()" value="点击计算0到n的偶数和"><br>
+</form>
+
+<script language="JavaScript">
+    var now_month=nowtime.getMonth();
+    //注意获得的月份是从0开始算起的，比真实的月份数小1
+    var now_day=nowtime.getDate();
+    //注意获得日期是getDate()，而getDay()是获取星期
+    if ((now_month==1) && (now_day==14)){  //注意表达式中"等于关系"和"与关系"的写法
+        document.write("情人节快乐！");
+        window.open("<img src=\"171013qj94izjra9drz9r4.jpg.thumb.jpg\" height=\"847\" width=\"600\"/>")  //注意右划线的写法
+    }
+    if ((now_month==8) && (now_day==10)){
+        document.write("教师节快乐！");
+        window.open("171013qj94izjra9drz9r4.jpg.thumb.jpg");
+    }
+    </script>
+</body>
+</html>

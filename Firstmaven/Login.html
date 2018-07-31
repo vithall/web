@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+
+</head>
+<body>
+<script language="JavaScript">
+    //弹出选择日期对话框
+    function showDialog(){
+        var config='';
+        config+= 'dialogWidth:320px;dialogHeight:180px;';
+        config+='dialogTop:140px;dialogLeft:250px;';
+        config+='center:no;help:no;resizable:no;status:no';
+        showModalDialog("getdate.html",form1.birth,config);
+    }
+    //校验用户输入值
+    function checkform(){
+        with (form1){
+            if (username.value==""){
+                alert("请输入用户名");
+                username.focus();
+                return false;
+            }
+            if (password.value==""){
+                alert("请输入口令");
+                password.focus();
+                return false;
+            }
+            if (password2.value!=password.value){
+                alert("两次输入口令必须一致");
+                password2.focus();
+                return false;
+            }
+            //校验身份证
+            if  (((idcard.value).length!=15) && ((idcard.value).length!=18)){
+                alert("身份证必须长度为15或18");
+                idcard.focus();
+                return false;
+            }
+            //校验邮编
+            if  ((postcode.value).length!=5){
+                alert("邮编必须长度为5");
+                postcode.focus();
+                return false;
+            }
+
+
+        }
+        //form1.submit();
+        return true;
+    }
+</script>
+
+<form name="form1">
+    用户注册程序
+    <hr size=1>
+    用户名:<input type="text" name="username" value="">*<br>
+    口　令:<input type="password" name="password" value="">*<br>
+    再一次:<input type="password" name="password2" value="">*<br>
+    身份证:<input type="text" name="idcard" value="">*<br>
+    地　址:<input type="text" name="address" value=""><br>
+    邮　编:<input type="text" name="postcode" value="">*<br>
+    出生年月:<input type="text"  name="birth" value="" readonly style="background:#efefef">
+    <input type="button" id="selectBtn" onclick="showDialog()" value="选择日期"><br>
+    <hr size=1>
+    <input type="button" onclick="checkform()" value="提交">
+</form>
+</body>
+</html>

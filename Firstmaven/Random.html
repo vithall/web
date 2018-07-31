@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>随机数生成</title>
+    <script language="JavaScript">
+        //制作一个摇奖程序，要求在0-20中抽出3个幸运号码
+        var myNums=[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+        var myResult=[];
+
+        //检查在结果中是否包含指定的数
+        function checkExists(n){
+            var have=false;
+            for (var i=0;i<myResult.length;i++){
+                if (myResult[i]==n){
+                    have=true;
+                    break;
+                }
+            }
+            return have;
+        }
+        //获取幸运号码
+        function myRandom(){
+            var tempNum;
+            var i=0;
+            while (i<3){
+                //获得0~20之间的一个随机数
+                tempNum=Math.round(Math.random()*21);
+                if (!checkExists(tempNum)){
+                    //将获得的数压入结果数组
+                    myResult.push(myNums[tempNum]);
+                    i++;
+                }
+            }
+            document.write(myResult);
+        }
+        myRandom();
+    </script>
+</head>
+<body>
+</body>
+</html>

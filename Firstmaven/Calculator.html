@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算器</title>
+    <script language="JavaScript">
+        /*
+        程序功能:获取数学常量
+            进行加减乘除
+            进行正弦、余弦、对数、开平方根计算
+        */
+        function doact(key){ //输入按键信息
+            document.form1.t1.value+=key;
+        }
+        function docal(){  //计算表达式
+            document.form1.t1.value=eval(document.form1.t1.value);
+        }
+    </script>
+    <style>
+        input {width:45px;height:30px}
+    </style>
+</head>
+<body>
+    <center>
+        <form name="form1" method="post" act="" style="background:#efefef; width:210px;">
+            <br>
+            <label for="t1"></label>
+            <input type="text" id="t1" name="t1" value="" style="width:200px;height:25px">
+            <br><br>
+            <input type="button" value="+" onclick="doact(this.value)">
+            <input type="button" value="-" onclick="doact(this.value)">
+            <input type="button" value="*" onclick="doact(this.value)">
+            <input type="button" value="/" onclick="doact(this.value)">
+            <br><br>
+            <input type="button" value="1" onclick="doact(this.value)">
+            <input type="button" value="2" onclick="doact(this.value)">
+            <input type="button" value="3" onclick="doact(this.value)">
+            <input type="button" value="4" onclick="doact(this.value)">
+            <br><br>
+            <input type="button" value="5" onclick="doact(this.value)">
+            <input type="button" value="6" onclick="doact(this.value)">
+            <input type="button" value="7" onclick="doact(this.value)">
+            <input type="button" value="8" onclick="doact(this.value)">
+            <br><br>
+            <input type="button" value="9" onclick="doact(this.value)">
+            <input type="button" value="0" onclick="doact(this.value)">
+            <input type="button" value="=" onclick="docal()">
+            <input type="button" value="C" onclick="t1.value=''">
+            <br><br>
+            <input type="button" value="π" onclick="doact(Math.PI)">
+            <input type="button" value="e" onclick="doact(Math.E)">
+            <input type="button" value="sqrt" onclick="t1.value=Math.sqrt(t1.value)">
+            <input type="button" value="1/x" onclick="t1.value=1/(t1.value)">
+            <br><br>
+            <input type="button" value="sin" onclick="t1.value=Math.sin(t1.value)">
+            <input type="button" value="cos" onclick="t1.value=Math.cos(t1.value)">
+            <input type="button" value="tan" onclick="t1.value=Math.tan(t1.value)">
+            <input type="button" value="asin" onclick="t1.value=Math.asin(t1.value)">
+            <br><br>
+        </form>
+    </center>
+</body>
+</html>

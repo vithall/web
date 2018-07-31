@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>被调用的对话框</title>
+    <script language="javascript">
+        var i;
+        //获取当前日期
+        var now=new Date();
+        var theYear;
+        var theMonth;
+        var theDate;
+
+        //数字补位函数,如果数字theNum不足newlength位前面则补0,返回字符串
+        function fullzero(theNum,newlength){
+            //用空字串与数字theNum相加将获取字符串类型的数字
+            var tempresult=""+theNum;
+            var oldlength=tempresult.length;
+            for(var j=1;j<=(newlength-oldlength);j++){
+                tempresult="0"+tempresult;
+            }
+            return tempresult;
+        }
+
+        //获取今天的年月日,并进行数字补位,年为4个字符长,月、日各为2个字符长,
+        function today(){
+            theYear=now.getYear();
+            theMonth=now.getMonth()+1;
+            theDate=now.getDate();
+
+            theYear=fullzero(theYear,4);
+            theMonth=fullzero(theMonth,2);
+            theDate=fullzero(theDate,2);
+        }
+
+        //通对话框参数对输入框中的原有值进行读取
+        function read(){
+            var theInput=dialogArguments;
+            var oldvalue=theInput.value;
+            if (oldvalue.length==10){ //eg. 2004-05-01
+                theYear=oldvalue.substr(0,4);
+                theMonth=oldvalue.substr(5,2);
+                theDate=oldvalue.substr(8,2);
+            }
+        }
+
+        //对年、月、日选择框进行初始化
+        function init(){
+            d1.value=theYear;
+            d2.value=theMonth;
+            d3.value=theDate;
+        }
+
+        //确定按钮事件，获取当前选择框的值组合后更新输入框中的值
+        function ok(){
+            var theInput=dialogArguments;
+            theYear =d1.options[d1.options.selectedIndex].value;
+            theMonth=d2.options[d2.options.selectedIndex].value;
+            theDate  =d3.options[d3.options.selectedIndex].value;
+            theInput.value=theYear+"-"+theMonth+"-"+theDate;
+            window.close();
+        }
+
+        //取消按钮事件，关闭当前对话框
+        function cancel(){
+            window.close();
+        }
+    </script>
+</HEAD>
+<BODY bgcolor="buttonface" onload="today();read();init()">
+<div align="center">
+    <BR><BR>
+    <select id="d1">
+        <script language="javascript">
+            for (i=1970;i<=2030;i++){
+                document.write("<option value="+fullzero(i,4)+">"+i+"年</option>\r\n");
+            }
+        </script>
+    </select>
+    <select id="d2">
+        <script language="javascript">
+            for (i=1;i<=12;i++){
+                document.write("<option value="+fullzero(i,2)+">"+i+"月</option>\r\n");
+            }
+        </script>
+    </select>
+    <select id="d3">
+        <script language="javascript">
+            for (i=1;i<=31;i++){
+                document.write("<option value="+fullzero(i,2)+">"+i+"日</option>\r\n");
+            }
+        </script>
+    </select>
+    <hr size=1 width="90%">
+    <input type="button" name="todaybtn" value="今天" onclick="today();init();">
+    <input type="button" name="okbtn" value="确定" onclick="ok()">
+    <input type="button" name="cancelbtn" value="取消" onclick="cancel()">
+</div>
+</BODY>
+</HTML>

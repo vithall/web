@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>日历</title>
+    <script language="JavaScript">
+        var str1="日,一,二,三,四,五,六";
+        var weekArray=str1.split(",");
+
+        //获取当前年月日
+        var today=new Date();
+        var yy=today.getFullYear();
+        var mm=today.getMonth()+1;
+        var dd=today.getDate();
+        var ww=weekArray[today.getDay()];
+
+        //常规方法判断是否闰年
+        function isRunYear(n){
+            var tempResult=false;
+            if  (((n % 400) == 0) || (((n % 4) == 0) && ((n % 100) != 0))){
+                tempResult=true;
+            }
+            return tempResult;
+        }
+        //常规方法判断一个月有几天
+        function HaveDays(theYear,theMonth){
+            var tempResult=0;
+            switch (theMonth){
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:tempResult=31;break;
+                case 4:
+                case 6:
+                case 9:
+                case 11:tempResult=30;break;
+                case 2:tempResult=(isRunYear(theYear))?29:28;break;
+            }
+            return tempResult;
+        }
+        var runYear="";
+        if (isRunYear(yy)){
+            runYear="(闰)";
+        }
+        document.write("<div style='width:200px;' align='center'>");
+        document.write((yy+"年"+mm+"月"+runYear+"<br>星期"+ww+"<br>").fontsize("4"));
+        document.write("<span style='font-size:72px'>"+dd+"</span>");
+
+        document.write("<table width='100%'>");
+        //输出星期的头
+        document.write("<tr style='background:#efefef'>");
+        for (var i=0;i<=6;i++){
+            document.write("<td>"+weekArray[i]+"</td>");
+        }
+        document.write("</tr>");
+        //获取当月第一天是星期几
+        var firstday=new Date(yy+"/"+mm+"/1");
+        var fweek=firstday.getDay();
+        //获取当前月的天数
+        var daynum=HaveDays(yy,mm);
+        for (var j=1;j<=6;j++){
+            document.write("<tr>");
+            for (var i=0;i<=6;i++){
+                //计算当前格子应该存放的日期
+                theDay=7*(j-1)+i+1-fweek;
+                //如果还没到月头或超过月尾则输出空
+                if (((j==1)&&(i<fweek))||(theDay>daynum)){
+                    document.write("<td>&nbsp;</td>");
+                }else{
+                    switch (i){
+                        //周日为红色
+                        case 0:document.write("<td>"+(""+theDay).fontcolor("#ff0000")+"</td>");break;
+                        //周六为绿色
+                        case 6:document.write("<td>"+(""+theDay).fontcolor("#00cc00")+"</td>");break;
+                        default:document.write("<td>"+theDay+"</td>");
+                    }
+                }
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");
+        document.write("</div>");
+
+        function AliveTime() {
+            // var tempDateStr=prompt("请输入出生年月日","1995/10/1");
+            var tempDateStr = document.getElementById("Time").value;
+            var bornDate = new Date(tempDateStr);
+            //以出生年月日创建日期对象
+            var nowDate = new Date();
+            //以当前年月日创建日期对象
+            var numDay = 24 * 60 * 60 * 1000;
+            //计算一天可以有多少毫秒
+            var AllDays = parseInt((nowDate.getTime() - bornDate.getTime()) / numDay);
+            //计算已经经过的天数
+            // alert("您好,您已经活了"+AllDays+"天");
+            document.getElementById("a").innerHTML="您好，您已经活了" + AllDays + "天";
+        }
+    </script>
+    <script language="javascript">
+        //定义关闭状态图片
+        var CLOSEPIC="images/icon/NodeImg1.png";
+        //定义打开状态图片
+        var OPENPIC="images/icon/NodeImg2.png";
+        //定义叶子节点图片
+        var ITEMPIC="images/icon/NodeImg0.png";
+
+        //根据标签类型获取对象中包含的第一个子对象
+        function getson(el,SonTagName){
+            var oObj=el;
+            oObj=oObj.children.tags(SonTagName)(0);
+            return oObj;
+        }
+
+        //切换下层节点显示或不显示的状态
+        function exshow(el){
+            var el1=eval(el.id+"_div");
+            var el2=getson(el,"IMG");
+            var el3=getson(el,"SPAN");
+            if ((el1.style.display=="none") || (el1.style.display=="")){
+                el1.style.display="block";
+                if (el2) el2.src=OPENPIC;
+            }else{
+                el1.style.display="none";
+                if (el2) el2.src=CLOSEPIC;
+            }
+        }
+
+        //输出空格
+        function space(num){
+            var tempresult="";
+            for (var i=1;i<=num;i++){
+                tempresult+="　";
+            }
+            return tempresult;
+        }
+        //定义全局变量xp_tree用于存储树内容
+        var xp_tree;
+        //处理节点事件
+        function doact(str){
+            alert("您按了菜单项["+str+"]");
+        }
+        //输出树节点头
+        function writeItemHead(level,id,name){
+            xp_tree+=space(level);
+            xp_tree+='<span id="item'+id+'" onclick="exshow(this)" class="navitem"><img src="'+CLOSEPIC+'"> '+name+'</span><br>';
+            xp_tree+='<div id="item'+id+'_div" class="itemdetail">';
+        }
+        //输出节点内容
+        function writeDetail(level,content){
+            xp_tree+=space(level);
+            xp_tree+='<span onclick=\'doact("'+content+'")\'><img src="'+ITEMPIC+'"> '+content+'</span><br>';
+        }
+        //输出多个节点内容，多个节点内容之间用逗号隔开
+        function writeDetails(level,content){
+            var contents=content.split(",");
+            for(var i=0;i<contents.length;i++){
+                writeDetail(level,contents[i]);
+            }
+        }
+        //输出树节点尾
+        function writeEnd(){
+            xp_tree+='</div>';
+        }
+
+        //初始化树
+        function initTree(){
+            xp_tree="";
+            writeItemHead(0,"11","数码产品");
+            writeItemHead(1,"22","流行手机");
+            writeDetails(2,"拍照手机,PDA手机,CDMA手机");
+            writeItemHead(2,"33","GSM手机");
+            writeDetails(3,"摩托罗拉,诺基亚,西门子");
+            writeEnd();
+            writeDetail(2,"彩屏手机");
+            writeEnd();
+            writeDetail(1,"数码相机");
+            writeItemHead(1,"44","U盘存储");
+            writeDetails(2,"32M,64M,128M");
+            writeEnd();
+            writeDetails(1,"录音笔,DV摄象机");
+            writeEnd();
+            document.write(xp_tree);
+        }
+    </script>
+</head>
+<body>
+<script language="JavaScript">
+    initTree();
+</script>
+<!--<form action="" method="post" name="form1">
+    判断输入的格式正确与否：<br>
+    请输入正确的日期格式：
+    <label for="dates"></label>
+    <input type="text" name="dates" id="dates" />
+    <input type="submit" name="Submit" value="进入" onclick="check()" />
+</form><br>
+<form>
+    <p>生命计时</p>
+    请输入你的生日：
+    <label for="Time"></label>
+    <input type="text" name="time" id="Time" value="1997/06/22" />
+    <input type="submit" name="Submit" value="确认" onclick="AliveTime()" />
+</form>
+<p id="a">此处显示结果</p>-->
+</body>
+</html>

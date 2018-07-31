@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>生命计时</title>
+    <script language="JavaScript">
+        function AliveTime() {
+            // var tempDateStr=prompt("请输入出生年月日","1995/10/1");
+            var tempDateStr = document.getElementById("time").value;
+            var bornDate = new Date(tempDateStr);
+            //以出生年月日创建日期对象
+            var nowDate = new Date();
+            //以当前年月日创建日期对象
+            var numDay = 24 * 60 * 60 * 1000;
+            //计算一天可以有多少毫秒
+            var AllDays = parseInt((nowDate.getTime() - bornDate.getTime()) / numDay);
+            //计算已经经过的天数
+            // alert("您好,您已经活了"+AllDays+"天");
+            document.write("您好，您已经活了" + AllDays + "天");
+        }
+    </script>
+</head>
+<body>
+<form>
+    <p>生命计时</p>
+    请输入你的生日：
+    <label for="time"></label>
+    <input type="text" name="time" id="time" value="1997/06/22" />
+    <input type="submit" name="Submit" value="确认" onclick="AliveTime()" />
+</form>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购物车</title>
+</head>
+<body>
+<script language="JavaScript">
+    <!--
+    //将物品从购物车中删除，在这里name指的是cookie名称而不是商品名称
+    function removeItem( name )
+    {
+        document.cookie = name + "='';";
+        //以下语句为刷新屏幕，功能同history.go(0)
+        document.location = document.location;
+    }
+    //通过cookie名称获取cookie值
+    function getCookieValue( name )
+    {
+        var c = document.cookie;
+        var begin = c.indexOf( name );
+
+        if( begin < 0 ) return( "" );
+        begin += name.length + 1;
+        var end = c.indexOf( ";", begin );
+        if( end == -1 ) end = c.length;
+        return( c.slice( begin, end ) );
+    }
+    //通过cookie名称获取物品名称
+    function getItemName( item )
+    {
+        var c = getCookieValue( item );
+        if( c )
+        {
+            return( c.split( "," )[0] );
+        }
+        else return( "" );
+    }
+    //通过cookie名称获取物品价格
+    function getItemPrice( item ) {
+        var c = getCookieValue( item );
+        if( c )
+        {
+            return( c.split( "," )[1] );
+        }
+        else return( "" );
+    }
+
+
+    // -->
+
+</script>
+
+<b><font size="6">查看购物车</font></b>
+<form>
+    <table width="100%" border="2">
+        <script language="JavaScript">
+            <!--
+            total=0;
+            for (var i = 1 ; i <= parseInt(getCookieValue("items")) ; i++ ) {
+                if( getItemName( "item" + i ) != "" &&  getItemPrice( "item" + i ) != undefined ) {
+                    document.write( "<tr><td>" );
+                    document.write( getItemName( "item" + i ) + "</td><td>" );
+                    document.write( "RMB" + getItemPrice( "item" + i ) +
+                        "元</td><td align='center'>" );
+                    document.write( "<input type='button' value='移除' " +
+                        "onClick='JavaScript: removeItem( \"item" + i + "\" );'>" );
+                    document.write( "</td></tr>" );
+                    total += parseFloat( getItemPrice( "item" + i ) );
+                }
+            }
+            document.write('<tr><td><b>合计</b></td>');
+            document.write('<td colspan="2" align="left">RMB'+total+'元</td></tr>');
+            // -->
+        </script>
+        <tr><td colspan="3" align="center">
+            <input type="button" value="继续购物"
+                   onClick="JavaScript: document.location='Lab5-2a.htm';">
+        </td></tr>
+    </table>
+</form>
+</body>
+</html>

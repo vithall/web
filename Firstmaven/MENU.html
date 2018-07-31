@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    /*.navitem {cursor:hand}
+    .itemdetail {font-size:11pt;padding:4px;display:none;cursor:hand}*/
+</style>
+<script language="javascript">
+    //定义关闭状态图片
+    var CLOSEPIC="images/icon/NodeImg1.png";
+    //定义打开状态图片
+    var OPENPIC="images/icon/NodeImg2.png";
+    //定义叶子节点图片
+    var ITEMPIC="images/icon/NodeImg0.png";
+
+    //根据标签类型获取对象中包含的第一个子对象
+    function getson(el,SonTagName){
+        var oObj=el;
+        oObj=oObj.children.tags(SonTagName)(0);
+        return oObj;
+    }
+
+    //切换下层节点显示或不显示的状态
+    function exshow(el){
+        var el1=eval(el.id+"_div");
+        var el2=getson(el,"IMG");
+        var el3=getson(el,"SPAN");
+        if ((el1.style.display=="none") || (el1.style.display=="")){
+            el1.style.display="block";
+            if (el2) el2.src=OPENPIC;
+        }else{
+            el1.style.display="none";
+            if (el2) el2.src=CLOSEPIC;
+        }
+    }
+
+    //输出空格
+    function space(num){
+        var tempresult="";
+        for (var i=1;i<=num;i++){
+            tempresult+="　";
+        }
+        return tempresult;
+    }
+    //定义全局变量xp_tree用于存储树内容
+    var xp_tree;
+    //处理节点事件
+    function doact(str){
+        alert("您按了菜单项["+str+"]");
+    }
+    //输出树节点头
+    function writeItemHead(level,id,name){
+        xp_tree+=space(level);
+        xp_tree+='<span id="item'+id+'" onclick="exshow(this)" class="navitem"><img src="'+CLOSEPIC+'"> '+name+'</span><br>';
+        xp_tree+='<div id="item'+id+'_div" class="itemdetail">';
+    }
+    //输出节点内容
+    function writeDetail(level,content){
+        xp_tree+=space(level);
+        xp_tree+='<span onclick=\'doact("'+content+'")\'><img src="'+ITEMPIC+'"> '+content+'</span><br>';
+    }
+    //输出多个节点内容，多个节点内容之间用逗号隔开
+    function writeDetails(level,content){
+        var contents=content.split(",");
+        for(var i=0;i<contents.length;i++){
+            writeDetail(level,contents[i]);
+        }
+    }
+    //输出树节点尾
+    function writeEnd(){
+        xp_tree+='</div>';
+    }
+
+    //初始化树
+    function initTree(){
+        xp_tree="";
+        writeItemHead(0,"11","数码产品");
+        writeItemHead(1,"22","流行手机");
+        writeDetails(2,"拍照手机,PDA手机,CDMA手机");
+        writeItemHead(2,"33","GSM手机");
+        writeDetails(3,"摩托罗拉,诺基亚,西门子");
+        writeEnd();
+        writeDetail(2,"彩屏手机");
+        writeEnd();
+        writeDetail(1,"数码相机");
+        writeItemHead(1,"44","U盘存储");
+        writeDetails(2,"32M,64M,128M");
+        writeEnd();
+        writeDetails(1,"录音笔,DV摄象机");
+        writeEnd();
+        document.write(xp_tree);
+    }
+</script>
+</head>
+<body>
+<div id="MyTree">
+    <script language="JavaScript">
+        initTree();
+    </script>
+</div>
+</body>
+</html>

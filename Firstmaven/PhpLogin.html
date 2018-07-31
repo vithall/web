@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录与注册界面</title>
+    <link rel="stylesheet" type="text/css" href="PhpLogin.css">
+    <script type="text/javascript" src="PhpLogin.js">
+
+    </script>
+</head>
+<body>
+<div class="node_boss">
+    <form name="Form" action="phpLoginSucceed.html" onsubmit="return checkForm()" >
+        <div class="tittle">
+            会员注册
+        </div>
+        <div class="div">账号：
+            <input class="margin" id="username" type="text" placeholder="创建一个账号（例：12345678）" onfocus="IDFocus()" onblur="IDBlur()" ><br><br>
+                <p id="usernameId"></p>
+        </div>
+        <div class="div">
+            输入密码：
+            <input id="pwd" type="password" placeholder="密码（6-10个字符）" onfocus="PwdFocus()" onblur="PwdBlur()" value=""><br><br>
+            <p id="pwdId"></p>
+        </div>
+        <div class="div">
+            确认密码：
+            <input id="repwd" type="password" placeholder="再一次输入密码" onblur="repwdBlur()" value=""><br><br>
+            <p id="repwdId"></p>
+        </div>
+        <div class="div">
+            昵称：
+            <input class="margin" id="nickname" type="text" placeholder="为自己取个昵称吧（例：比利海灵顿）" onblur="nicknameBlur()" value=""><br><br>
+            <p id="nicknameId"></p>
+        </div>
+        <div class="div">
+            邮箱：
+            <input class="margin" id="email" type="email" placeholder="请输入邮箱" value=""><br><br>
+            <p id="emailId"></p>
+        </div>
+        &nbsp;&nbsp;<input class="submit" type="submit" value="确认" >
+    </form>
+</div>
+</body>
+</html>

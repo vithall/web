@@ -1,0 +1,75 @@
+.tittle{
+    width: 390px;
+    height: 30px;
+    color: #FF6600;
+    font-size: 30px;
+    line-height: 30px;
+    text-align: center;
+    padding-bottom: 35px;
+}
+*{
+    margin:0;
+    padding:0;
+    font-family: "Microsoft YaHei UI";
+}
+.node_boss{
+    margin: 0 auto;
+    padding-left: 35%;
+    padding-top: 100px;
+    width: 1000px;
+    height: 500px;
+
+}
+input{
+    width: 300px;
+    height: 30px;
+    border: #959295 solid 1px;
+}
+.div{
+    color:#333;
+    padding:10px 0 10px 0;
+    position:relative;
+}
+.margin{
+    margin-left: 32px;
+}
+
+div{
+    padding:10px 0 10px 0;
+}
+.submit{
+    width: 300px;
+    height: 40px;
+    margin: 20px 0 0 78px;
+    background-color: #FF6600;
+    color: white;
+    text-align: center;
+}
+p{
+    font-size:15px;
+    position:absolute;
+    left:400px;
+    top:15px;
+    display:inline;
+}
+/*当鼠标放到文本框时，提示文本的样式*/
+.import_prompt{
+    border:solid 1px #ffcd00;
+    background-color:#ffffda;
+    padding:2px 5px 0px 10px;
+    line-height:20px;
+}
+/*当文本框内容不符合要求时，提示文本的样式*/
+.error_prompt{
+    border:solid 1px #ff3300;
+    background-color:#fff2e5;
+    padding:2px 5px 0px 10px;
+    line-height:20px;
+}
+/*当文本框内容输入正确时，提示文本的样式*/
+.ok_prompt{
+    border:solid 1px #01be00;
+    background-color:#e6fee4;
+    padding:2px 5px 0px 10px;
+    line-height:20px;
+}
